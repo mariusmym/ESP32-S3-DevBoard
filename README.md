@@ -43,14 +43,14 @@ Blink the user LED on GPIO2 and cycle the RGB LED:
 #include <Adafruit_NeoPixel.h>
 
 #define USER_LED 2
-#define RGB_PIN  0   // <- change to the WS2812B pin from the schematic
+#define RGB_PIN  40
 
 Adafruit_NeoPixel rgb(1, RGB_PIN, NEO_GRB + NEO_KHZ800);
 
 void setup() {
   pinMode(USER_LED, OUTPUT);
   rgb.begin();
-  rgb.setBrightness(40); // it's a 2020 LED, not a stadium floodlight
+  rgb.setBrightness(50); // it's a 2020 LED, not a stadium floodlight
 }
 
 void loop() {
