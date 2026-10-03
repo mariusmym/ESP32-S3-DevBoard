@@ -31,7 +31,7 @@ USB-C, battery charging, RGB LED and an ESP32-S3, all squeezed into a board that
 
 3. **Check battery polarity before connecting!** PH2.0 battery connectors are *not* standardized, and plenty of batteries come with the wires the "wrong" way around. Compare with the markings on the PCB, and swap the pins in the plug if needed. Batteries are very forgiving right up until the moment they aren't.
 
-4. **Use a single-cell 3.7V Li-Po / Li-ion battery only.** The TP4057 charges to 4.2V, so no 2S packs, no LiFePO4, no "I found it in an old vape" adventures.
+4. **Use a single-cell 3.7V Li-Po / Li-ion battery only.** The TP4057 charges to 4.2V, so no 2S packs, no LiFePO4, no "I found it in an old vape" adventures. 
 
 5. **Use a stencil when assembling.** Some of the components are pretty small (SC-79 and SOT-416, looking at you), and hand-pasting them is a great way to learn new swear words.
 
