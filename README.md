@@ -88,7 +88,7 @@ This project is tested and working as it should. Which, in hardware, is basicall
 
 ## If you want to edit the PCB
 
-**Project can also be found here:** https://oshwlab.com/mariusmym/PROJECT-LINK-HERE
+**Project can also be found here:** [(https://oshwlab.com/noobsmakingstuff/esp32-s3_devbrd_copy)](https://oshwlab.com/noobsmakingstuff/esp32-s3_devbrd_copy)
 
 ## License 
 
