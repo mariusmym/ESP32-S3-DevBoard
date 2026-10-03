@@ -82,12 +82,6 @@ Red, green, blue and a blinking yellow LED? The board works. Anything else? The 
 
 Full BOM in the **GERBER, BOM, PNP** folder.
 
-## Repository content 
-
-- **GERBER, BOM, PNP** – everything needed to order the PCB (and assembly, if tiny components aren't your idea of a relaxing weekend) from JLCPCB or your favorite fab.
-- **SCHEMATIC** – the schematic in PDF.
-- **Images** – photos and renders.
-
 ## Status 
 
 This project is tested and working as it should. Which, in hardware, is basically a miracle worth documenting.
@@ -98,7 +92,7 @@ This project is tested and working as it should. Which, in hardware, is basicall
 
 ## License 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 This project is licensed under the [MIT License](LICENSE).
 
