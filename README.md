@@ -2,7 +2,8 @@
 
 USB-C, battery charging, RGB LED and an ESP32-S3, all squeezed into a board that still fits on a regular breadboard. Everything you need to start messing around with the ESP32-S3, and nothing you need to apologize for.
 
-![ESP32-S3 DevBoard](Images/board_top.jpg)
+<img width="600" height="450" alt="IMG_8784" src="https://github.com/user-attachments/assets/6595d8a6-92f0-4970-9ed4-9bfd18eacc0f" />
+
 
 ## MAIN FEATURES :
 
@@ -16,9 +17,10 @@ USB-C, battery charging, RGB LED and an ESP32-S3, all squeezed into a board that
 - **User LED on GPIO2** – for the classic blink sketch. Every board needs one, it's the law.
 - **Breadboard friendly** – 2 × 16-pin headers, compact enough to leave free rows on both sides.
 
-![Board render](Images/board_render.png)
+<img width="600" height="453" alt="3D-top" src="https://github.com/user-attachments/assets/c1f54b7f-f728-4718-9f3c-d1459db158b6" />
 
-## IMPORTANT INFORMATIONS ! ⚠️
+
+## IMPORTANT INFORMATIONS ! 
 
 1. **Hold down the BOOT button while you plug in the USB cable** to put the board in download mode, then upload your firmware. There is no RESET button, so unplugging and plugging back in *is* the reset button. Minimalism! The number one reason for "Failed to connect to ESP32-S3" errors is forgetting this step; number two is a charge-only USB cable, so check that too 🙃
 
@@ -33,7 +35,7 @@ USB-C, battery charging, RGB LED and an ESP32-S3, all squeezed into a board that
 
 5. **Use a stencil when assembling.** Some of the components are pretty small (SC-79 and SOT-416, looking at you), and hand-pasting them is a great way to learn new swear words.
 
-## Quick test 🧪
+## Quick test 
 
 Blink the user LED on GPIO2 and cycle the RGB LED:
 
@@ -64,7 +66,7 @@ void loop() {
 
 Red, green, blue and a blinking yellow LED? The board works. Anything else? The board works and the code is lying.
 
-## Main components 🔩
+## Main components 
 
 | Part | Component | LCSC |
 |---|---|---|
@@ -80,13 +82,13 @@ Red, green, blue and a blinking yellow LED? The board works. Anything else? The 
 
 Full BOM in the **GERBER, BOM, PNP** folder.
 
-## Repository content 📂
+## Repository content 
 
 - **GERBER, BOM, PNP** – everything needed to order the PCB (and assembly, if tiny components aren't your idea of a relaxing weekend) from JLCPCB or your favorite fab.
 - **SCHEMATIC** – the schematic in PDF.
 - **Images** – photos and renders.
 
-## Status ✅
+## Status 
 
 This project is tested and working as it should. Which, in hardware, is basically a miracle worth documenting.
 
@@ -94,22 +96,15 @@ This project is tested and working as it should. Which, in hardware, is basicall
 
 **Project can also be found here:** https://oshwlab.com/mariusmym/PROJECT-LINK-HERE
 
-## License 📜
+## License 
 
-[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-This project is licensed under [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This project is licensed under the [MIT License](LICENSE).
 
-In human words:
-- ✅ **Share** – copy and redistribute it in any medium or format
-- ✅ **Adapt** – remix, transform, and build upon it
-- 🏷️ **Attribution** – give credit and link back here
-- 🚫 **NonCommercial** – don't sell it (boards, kits, or designs)
-- 🔁 **ShareAlike** – if you remix it, share your version under the same license
+In human words: do pretty much whatever you want with it (build it, modify it, sell it, put it in your own project), just keep the copyright notice and the license text with it. And if it catches fire, that's on you, not me 🔥.
 
-See the [LICENSE](LICENSE) file for the full legal text, which is much less fun to read than this README.
-
-## Donate ☕
+## Donate 
 
 If you'd like to say thanks or buy me a coffee, a **[PayPal donation](https://www.paypal.com/donate/?hosted_button_id=KHR7DYJP2Z8QJ)** is always appreciated!
 
