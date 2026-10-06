@@ -2,7 +2,7 @@
 
 USB-C, battery charging, RGB LED and an ESP32-S3, all squeezed into a board that still fits on a regular breadboard. Everything you need to start messing around with the ESP32-S3, and nothing you need to apologize for.
 
-<img width="600" height="450" alt="IMG_8784" src="https://github.com/user-attachments/assets/6595d8a6-92f0-4970-9ed4-9bfd18eacc0f" />
+<img width="800" height="400" alt="esp32-s3" src="https://github.com/user-attachments/assets/cf47ec8c-619f-4c09-a11e-34cfd1266b6c" />
 
 
 ## MAIN FEATURES :
