@@ -97,7 +97,7 @@ void loop() {
 }
 ```
 
-Red, green, blue, white, then a rainbow, and the IO2 LED flips on every press? The LEDs and the button all work. Nothing happens when you press? Check `BTN_PIN` before blaming the board. Anything else? The board works but the code is lying.
+Red, green, blue, white, then a rainbow, and the IO2 LED flips on every button press? The LEDs and the button all work. Nothing happens when you press? Check `BTN_PIN` before blaming the board. Anything else? The board works but the code is lying.
 
 ## Main components 
 
