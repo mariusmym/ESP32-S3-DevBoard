@@ -35,36 +35,69 @@ USB-C, battery charging, RGB LED and an ESP32-S3, all squeezed into a board that
 
 5. **Use a stencil when assembling.** Some of the components are pretty small (SC-79 and SOT-416, looking at you), and hand-pasting them is a great way to learn new swear words.
 
-## Quick test 
+## Quick test
 
-Blink the user LED on GPIO2 and cycle the RGB LED:
+Press BOOT to cycle the RGB LED and toggle the user LED on GPIO2:
 
 ```cpp
 #include <Adafruit_NeoPixel.h>
 
 #define USER_LED 2
 #define RGB_PIN  40
+#define BTN_PIN  0   // BOOT button, active LOW
 
 Adafruit_NeoPixel rgb(1, RGB_PIN, NEO_GRB + NEO_KHZ800);
 
+uint32_t colors[4];
+uint8_t  idx = 0;            // 0-3 = fixed colors, 4 = rainbow
+const uint8_t MODES = 5;
+uint16_t hue = 0;
+
+void showColor() {
+  if (idx < 4) {
+    rgb.setPixelColor(0, colors[idx]);
+  } else {
+    rgb.setPixelColor(0, rgb.gamma32(rgb.ColorHSV(hue)));
+  }
+  rgb.show();
+}
+
 void setup() {
   pinMode(USER_LED, OUTPUT);
+  pinMode(BTN_PIN, INPUT_PULLUP);
+
   rgb.begin();
-  rgb.setBrightness(50); // it's a 2020 LED, not a stadium floodlight
+  rgb.setBrightness(40); // it's a 2020 LED, not a stadium floodlight
+
+  colors[0] = rgb.Color(255, 0, 0);
+  colors[1] = rgb.Color(0, 255, 0);
+  colors[2] = rgb.Color(0, 0, 255);
+  colors[3] = rgb.Color(255, 255, 255);
+
+  showColor();
 }
 
 void loop() {
-  uint32_t colors[] = { rgb.Color(255, 0, 0), rgb.Color(0, 255, 0), rgb.Color(0, 0, 255) };
-  for (uint32_t c : colors) {
+  static bool lastState = HIGH;
+  bool state = digitalRead(BTN_PIN);
+
+  if (state == LOW && lastState == HIGH) {   // button just pressed
+    idx = (idx + 1) % MODES;
     digitalWrite(USER_LED, !digitalRead(USER_LED));
-    rgb.setPixelColor(0, c);
-    rgb.show();
-    delay(500);
+    showColor();
   }
+  lastState = state;
+
+  if (idx == 4) {                            // rainbow mode
+    hue += 256;                              // full wheel in ~5s
+    showColor();
+  }
+
+  delay(20); // simple debounce + rainbow step
 }
 ```
 
-Red, green, blue and a blinking yellow LED? The board works. Anything else? The board works and the code is lying.
+Red, green, blue, white, then a rainbow, and the IO2 LED flips on every press? The LEDs and the button all work. Nothing happens when you press? Check `BTN_PIN` before blaming the board. Anything else? The board works but the code is lying.
 
 ## Main components 
 
@@ -96,7 +129,7 @@ This project is tested and working as it should. Which, in hardware, is basicall
 
 This project is licensed under the [MIT License](LICENSE).
 
-In human words: do pretty much whatever you want with it (build it, modify it, sell it, put it in your own project), just keep the copyright notice and the license text with it. And if it catches fire, that's on you, not me 🔥.
+Do pretty much whatever you want with it (build it, modify it, sell it, put it in your own project), just keep the copyright notice and the license text with it. And if it catches fire, that's on you, not me 🔥.
 
 ## Donate 
 
