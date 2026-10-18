@@ -24,10 +24,18 @@ USB-C, battery charging, RGB LED and an ESP32-S3, all squeezed into a board that
 
 1. **Hold down the BOOT button while you plug in the USB cable** to put the board in download mode, then upload your firmware. There is no RESET button, so unplugging and plugging back in *is* the reset button. Minimalism! The number one reason for "Failed to connect to ESP32-S3" errors is forgetting this step; number two is a charge-only USB cable, so check that too 🙃
 
-2. **In Arduino IDE** select *ESP32S3 Dev Module* from the ESP32 board package and set:
-   - **USB CDC On Boot → Enabled** – otherwise `Serial.print()` will be shouting into the void.
-   - **Flash Size → 8MB**
-   - **PSRAM → Disabled** (the N8 module has no PSRAM, so don't go looking for it)
+2. **In Arduino IDE** this board has only a native USB port (no USB-to-UART chip), so the upload goes through the ESP32-S3's built-in USB. These settings work:
+ 
+| Setting                         | Value                                          |
+|---------------------------------|------------------------------------------------|
+| Board                           | ESP32-S3-USB-OTG                               |
+| Port                            | the COM port that appears when the board is plugged in |
+| Upload Mode                     | UART0 / Hardware CDC                           |
+| USB Mode                        | USB-OTG                                        |
+| Partition Scheme                | Default 4MB with spiffs (1.2MB APP/1.5MB SPIFFS) |
+| Core Debug Level                | None                                           |
+| Erase All Flash Before Upload   | Disabled                                       |
+ 
 
 3. **Check battery polarity before connecting!** PH2.0 battery connectors are *not* standardized, and plenty of batteries come with the wires the "wrong" way around. Compare with the markings on the PCB, and swap the pins in the plug if needed. Batteries are very forgiving right up until the moment they aren't.
 
