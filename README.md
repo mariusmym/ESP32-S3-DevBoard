@@ -24,7 +24,7 @@ USB-C, battery charging, RGB LED and an ESP32-S3, all squeezed into a board that
 
 1. **Hold down the BOOT button while you plug in the USB cable** to put the board in download mode, then upload your firmware. There is no RESET button, so unplugging and plugging back in *is* the reset button. Minimalism! The number one reason for "Failed to connect to ESP32-S3" errors is forgetting this step; number two is a charge-only USB cable, so check that too 🙃
 
-2. **In Arduino IDE** this board has only a native USB port (no USB-to-UART chip), so the upload goes through the ESP32-S3's built-in USB. These settings work:
+2. **In Arduino IDE**: this board has only a native USB port (no USB-to-UART chip), so the upload goes through the ESP32-S3's built-in USB. These settings work:
  
 | Setting                         | Value                                          |
 |---------------------------------|------------------------------------------------|
